@@ -17,6 +17,11 @@ exports.read = (req, res) => {
 exports.update = (req, res) => {
   const { name } = req.params
 
+  /*
+   Kirjutage selle asemel loogika, et leiab esimese elemendi
+   ja muudab ainult seda, kui see eksisteerib.
+  */
+
   cats = cats.map((cat) => {
     if (cat === name) {
       return cat + '_updated'
@@ -28,6 +33,7 @@ exports.update = (req, res) => {
 }
 
 exports.delete = (req, res) => {
-  //
+  // Kirjutada kustutamise funktsionaalsus
+
   res.send('delete')
 }
